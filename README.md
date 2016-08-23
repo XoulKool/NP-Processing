@@ -23,6 +23,12 @@ Next, run simple_switch.py on grnlntrn server with command
 
 The trickiest part is then running two programs as background processes on server 6.  Once the grnlntrn terminal has said that it has entered main mode, immediately run 
 
-`python 57client.py &`
+`python 57Client.py &`
 followed by the command
-`python 57client2.py &`
+`python 57Client2.py &`
+
+and now you should see after about 6 seconds thing are happening in every terminal except for the Pica8 switch terminal.  Because the connection between server5 and server6 is given priority first, you should see the connection be successful between server5 and server6 first.  then after the three second time interval, the connection is interrupted and the connection is given between server6 and server7 to transfer data.
+
+When everything is finished transferring, we are able to view how long each file took in UNIX epoch time by lookig at the files 57log1.txt [for file transferred from server 5 to server 6] and 57log2.txt [for file transferred from server6 to server7].  These times will be compared to the times in the next test.  
+
+Again you may run this test as many times as you like, but keep in mind to delete any flows in the flow table after eac run to ensure consistent and quality test runs
