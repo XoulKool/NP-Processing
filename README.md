@@ -17,9 +17,9 @@ On another note, please be sure you have created a file/s to be transferred and 
 
 To begin, run 57Server.py on Server 5 and 57Server2.py on Server7 to begin listening servers
 
-Next, run simple_switch.py on grnlntrn server with command
+Next, run round_robin_switch.py on grnlntrn server with command
 
-`ryu-manager --verbose simple_switch.py`
+`ryu-manager --verbose round_robin_switch.py`
 
 The trickiest part is then running two programs as background processes on server 6.  Once the grnlntrn terminal has said that it has entered main mode, immediately run 
 
