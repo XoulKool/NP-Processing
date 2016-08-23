@@ -21,6 +21,8 @@ while True:
     print('Server received', repr(data))
 
     filename='mytext.txt'
+    #Here it is imperative that you already have a file for transfer.  You can easily create a file of n 
+    #bytes using any language and then name it 'mytext.txt' and it will work with this test
     f = open(filename,'rb')
     l = f.read(1024)
     while (l):
