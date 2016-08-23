@@ -19,9 +19,10 @@ while True:
     print 'Got connection from', addr
     data = conn.recv(4096)
     print('Server received', repr(data))
-
+    #Here it is imperative that you already have a file for transfer.  You can easily create a file of n 
+    #bytes using any language and then name it 'mytext.txt' and it will work with this test
     filename='mytext.txt'
-    f = open(filename,'rb')
+    f = open(filename,'rb') 
     l = f.read(4096)
     while (l):
        try:
