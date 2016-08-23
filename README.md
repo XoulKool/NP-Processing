@@ -13,5 +13,16 @@ So to begin, we will need five different terminals for this test.  The first one
 
 It is important to note that the whole purpose of this test is to see how quickly two roughly 1 GB files [both different]  can be transferred via a round-robin scheduling flow schedule.  In this case, there will be first access between servers 5 and 6 for three seconds then the flow wil halt and a flow will be added so that it will be server6 and server7's turn to exchange data.  At the end we will analyze the totaly time it took for both files to be completed.
 
-On another note, please be sure you have created a file/s to be transferred and that the two listening servers know what these files are [see files 57Server1.py and 57Server2.py for comments on how to do this] 
+On another note, please be sure you have created a file/s to be transferred and that the two listening servers know what these files are [see files 57Server.py and 57Server2.py for comments on how to do this] 
 
+To begin, run 57Server.py on Server 5 and 57Server2.py on Server7 to begin listening servers
+
+Next, run simple_switch.py on grnlntrn server with command
+
+`ryu-manager --verbose simple_switch.py`
+
+The trickiest part is then running two programs as background processes on server 6.  Once the grnlntrn terminal has said that it has entered main mode, immediately run 
+
+`python 57client.py &`
+followed by the command
+`python 57client2.py &`
